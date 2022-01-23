@@ -4,9 +4,9 @@ from django.http import HttpResponse
 import requests
 
 def index(request):
-    response = requests.get('https://api.coingecko.com/api/v3/ping')
+    response = requests.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
     data = response.json()
-    print(data)
+    # status = data['status']
     return render(request, 'coins/home.html', {
-        'status': data['gecko_says']
+        'coins': data
     })

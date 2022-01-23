@@ -9,7 +9,14 @@
 </head>
 
 <body>
-    <p>status: {{status}}</p>
+    {% for coin in coins%}
+    <p>coin id: {{coin.id}}</p>
+    <p>coin symbol: {{coin.symbol}}</p>
+    <p>coin name: {{coin.name}}</p>
+    <p>current_price: {{coin.current_price}}</p>
+    <br>
+    {% endfor %}
+
 </body>
 
-</html>m
+</html>
